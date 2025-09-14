@@ -1,6 +1,6 @@
 package Builder.Sensor;
 
-public class Sensor {
+public abstract class Sensor {
     private int id;
     public enum state {
         ON,

@@ -1,27 +1,22 @@
 package Builder;
 
 public class Engine{
-    private int CylinderCount;
-    private String FuelType;
-    private float FuelConsumption;
+    private int CylinderCount = 8;
+    private String FuelType = "Diesel";
+    private float FuelConsumption = 0.64f;
     public float RPM;
-    private Piston EnginePiston;
-    private Wheel EngineWheel;
+    private Piston EnginePiston =  new Piston();
+    private Wheel EngineWheel = new Wheel(0.32f, 0.32f, "Standard");
 
-    public Engine(int CylinderCount, String FuelType, float FuelConsumption) {
-        this.CylinderCount = CylinderCount;
-        this.FuelType = FuelType;
-        this.FuelConsumption = FuelConsumption;
-        this.EnginePiston = new Piston();
-        this.EngineWheel = new Wheel(0.32f, 0.32f, "Standard"); // 0.64m total diameter
+    public Engine() {
+        CylinderCount = 8;
+        FuelType = "Diesel";
+        FuelConsumption = 0.64f;
     }
 
-    public Engine (int CylinderCount, String FuelType, float FuelConsumption, Piston piston, Wheel wheel){
-        this.CylinderCount = CylinderCount;
-        this.FuelType = FuelType;
-        this.FuelConsumption = FuelConsumption;
-        this.EnginePiston = piston;
-        this.EngineWheel = wheel;
+    @Override
+    public String toString() {
+        return "You had: "+CylinderCount+" cylenders, "+FuelType+" fuel type, "+FuelConsumption+" l per km with basic piston ";
     }
 
     public int getWorkTime(int km) {
@@ -82,21 +77,29 @@ public class Engine{
         };
     }
 
+    public Engine setPiston(Piston EnginePiston) {
+        this.EnginePiston = EnginePiston;
+        return this;
+    }
+
+    public Engine setWheel(Wheel EngineWheel) {
+        this.EngineWheel = EngineWheel;
+        return this;
+    }
+
     public int getCylinderCount() { return CylinderCount; }
-    public void setCylinderCount(int cylinderCount) { CylinderCount = cylinderCount; }
+    public Engine setCylinderCount(int cylinderCount) { CylinderCount = cylinderCount; return this; }
 
     public String getFuelType() { return FuelType; }
-    public void setFuelType(String fuelType) { FuelType = fuelType; }
+    public Engine setFuelType(String fuelType) { FuelType = fuelType; return this; }
 
     public float getFuelConsumption() { return FuelConsumption; }
-    public void setFuelConsumption(float fuelConsumption) { FuelConsumption = fuelConsumption; }
+    public Engine setFuelConsumption(float fuelConsumption) { FuelConsumption = fuelConsumption; return this; }
 
     public float getRPM() { return RPM; }
-    public void setRPM(float rpm) { RPM = rpm; }
+    public Engine setRPM(float rpm) { RPM = rpm; return this; }
 
     public Piston getEnginePiston() { return EnginePiston; }
-    public void setEnginePiston(Piston enginePiston) { EnginePiston = enginePiston; }
 
     public Wheel getEngineWheel() { return EngineWheel; }
-    public void setEngineWheel(Wheel engineWheel) { EngineWheel = engineWheel; }
 }

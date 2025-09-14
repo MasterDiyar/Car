@@ -29,11 +29,11 @@ public class Wheel {
 
     // Getters and setters
     public float getWheelRadiusOnly() { return wheelRadius; }
-    public void setWheelRadius(float wheelRadius) { this.wheelRadius = wheelRadius; }
+    public Wheel setWheelRadius(float wheelRadius) { this.wheelRadius = wheelRadius; return this; }
 
     public float getTireRadius() { return tireRadius; }
-    public void setTireRadius(float tireRadius) { this.tireRadius = tireRadius; }
+    public Wheel setTireRadius(float tireRadius) { this.tireRadius = tireRadius; return this; }
 
     public String getTireType() { return tireType; }
-    public void setTireType(String tireType) { this.tireType = tireType; }
+    public Wheel setTireType(String tireType) { this.tireType = tireType; return this;}
 }

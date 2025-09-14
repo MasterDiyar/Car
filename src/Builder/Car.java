@@ -1,12 +1,40 @@
 package Builder;
 
 public class Car {
-    private Engine engine;
-    private Window window;
-    private Seat seat;
-    private Wheel wheel;
-    private DrivePanel drivePanel;
+    private Engine engine = new Engine();
+    private Window window =  new Window();
+    private Seat seat = new Seat("Leather", "no", 10, new float[]{0.6f,0.6f,0.6f});
+    private Wheel wheel = new Wheel(0.64f,0.12f,"Rubber");
+    private DrivePanel drivePanel = new DrivePanel();
 
+    public Car addEngine(Engine engine) {
+        this.engine = engine;
+        return this;
+    }
+
+    public Car addWindow(Window window) {
+        this.window = window;
+        return this;
+    }
+
+    public Car addSeat(Seat seat) {
+        this.seat = seat;
+        return this;
+    }
+
+    public Car addWheel(Wheel wheel) {
+        this.wheel = wheel;
+        return this;
+    }
+
+    public Car addDrivePanel(DrivePanel drivePanel) {
+        this.drivePanel = drivePanel;
+        return this;
+    }
+
+    public Car(){
+
+    }
 
 
 
