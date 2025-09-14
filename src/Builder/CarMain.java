@@ -43,7 +43,27 @@ public class CarMain {
                     break;
                 case "car":
                     switch (scan[1]){
-                        case ""
+                        case "kia":
+                            car = new Car()
+                                    .addDrivePanel(new DrivePanel())
+                                    .addEngine(new Engine()
+                                            .setFuelType("Gasoline")
+                                            .setPiston(new Piston()))
+                                    .addWheel(new Wheel(0.64f, 0.12f, "rust"))
+                                    .addSeat(new Seat("nylon", "pillow", 1, new float[]{107, 50, 110}))
+                                    .addWindow(new Window());
+                            System.out.println(car.toString());
+                            break;
+                        case "hyundai":
+                            car = new Car()
+                                    .addDrivePanel(new DrivePanel())
+                                    .addEngine(new Engine()
+                                            .setFuelType("Gasoline")
+                                            .setPiston(new Piston()))
+                                    .addWheel(new Wheel(0.72f, 0.16f, "rust"))
+                                    .addSeat(new Seat("leather", "pillow", 1, new float[]{108, 47, 123}))
+                                    .addWindow(new Window());
+                            System.out.println(car.toString());
                     }
 
                     break;

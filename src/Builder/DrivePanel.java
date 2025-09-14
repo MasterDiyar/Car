@@ -53,5 +53,9 @@ public class DrivePanel {
         return temperature;
     }
 
+    @Override public String toString() {
 
+        return "car have "+belt.size()+" belts, 1 navigation sensor and 1 temperature sensor.";
+
+    }
 }

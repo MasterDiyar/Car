@@ -36,6 +36,11 @@ public class Car {
 
     }
 
+    @Override
+    public String toString(){
 
+        return "The car with "+window.toString()+ " window\n"+ seat.Material()+" seat, which is "+ seat.DelightLevel()+"\nengine which is "
+              +engine.toString()+"\n wheel with "+ wheel.getWheelRadius() +" radius and drive panel with "+drivePanel.toString();
+    }
 
 }

@@ -5,7 +5,7 @@ import java.util.List;
 public class Window{
     public List<BMath.Vector2> Points;
     public float Density;
-    public String Material;
+    public String Material = "";
     private int Raised = 0;
 
     public void OpenWindow(){
@@ -22,5 +22,13 @@ public class Window{
 
     public int GetRaised(){return Raised;}
 
+    @Override public String toString(){
+
+        return switch(Material){
+            case "toned" -> "toned";
+            case "quartz" -> "quartz";
+            default -> "default";
+        };
+    }
 }
 
