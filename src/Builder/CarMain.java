@@ -6,9 +6,9 @@ public class CarMain {
     public static void main(String[] args) {
         Car car = new Car();
         Engine engine = new Engine();
+        System.out.println("Enter help for get help:)");
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter help for get help:)");
 
         String action = "";
         String[] scan;
