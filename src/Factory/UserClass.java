@@ -8,8 +8,16 @@ public abstract class UserClass {
     public Weapon weapon;
 
     public abstract void heal(float damage);
-    public abstract void openIneventory();
-    public abstract void changeWeapon(Weapon weapon);
+    public abstract void about();
+    public void changeWeapon(Weapon weapon){
+        var lab = this.weapon.getClass().getCanonicalName().split("\\.");
+        var blab = lab[lab.length - 1];
+        System.out.println("Before: "+ blab);
+        this.weapon = weapon;
+        lab = weapon.getClass().getCanonicalName().split("\\.");
+        blab = lab[lab.length - 1];
+        System.out.println("Now: "+ blab);
+    }
 
     public abstract void takeDamage (UserClass Atacker, float Damage);
 
