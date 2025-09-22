@@ -3,6 +3,13 @@ package Factory.Player;
 import Factory.UserClass;
 
 public class Homunculus extends UserClass {
+    public Homunculus() {
+        this.Hp = 250;
+        this.Armor = 40;
+        this.Mana = 20;
+        this.Damage = 40;
+    }
+
     @Override
     public void heal(float damage) {
         if (damage > 0)System.out.println("Healing " +1.2f * damage + " hp");

@@ -5,6 +5,14 @@ import Factory.Weapon;
 import Factory.Weaponary.Bow;
 
 public class Archer extends UserClass {
+
+    public Archer() {
+        this.Hp = 100;
+        this.Armor = 20;
+        this.Mana = 20;
+        this.Damage = 40;
+    }
+
     @Override
     public void heal(float damage) {
         if (damage > 0)System.out.println("Healing " + damage + " hp");

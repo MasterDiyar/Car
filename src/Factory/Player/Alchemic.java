@@ -5,6 +5,13 @@ import Factory.Weapon;
 
 public class Alchemic extends UserClass {
 
+    public Alchemic(){
+        this.Hp = 120;
+        this.Armor = 20;
+        this.Mana = 200;
+        this.Damage = 40;
+    }
+
     @Override
     public void heal(float damage) {
         if (damage > 0)System.out.println("Healing " +2 * damage + " hp");

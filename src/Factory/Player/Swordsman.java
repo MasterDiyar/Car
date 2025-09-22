@@ -4,6 +4,13 @@ import Factory.UserClass;
 
 public class Swordsman extends UserClass
 {
+    public Swordsman(){
+        this.Hp = 100;
+        this.Armor = 15;
+        this.Mana = 20;
+        this.Damage = 60;
+    }
+
     @Override
     public void heal(float damage) {
         if (damage > 0)System.out.println("Healing " +2 * damage + " hp");
