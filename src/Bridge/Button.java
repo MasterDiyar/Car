@@ -15,12 +15,12 @@ public class Button implements UITool{
         Pressed = false;
     }
 
-    public void defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b};}
-    public void hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b};}
+    public Button defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b}; return this;}
+    public Button hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b}; return this;}
 
-    public String text(String text) {
+    public Button text(String text) {
         Text = text;
-        return text;
+        return this;
     }
 
     public boolean isPressed() {return Pressed;}

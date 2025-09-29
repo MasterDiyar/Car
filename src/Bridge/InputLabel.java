@@ -17,12 +17,12 @@ public class InputLabel implements UITool{
         Pressed = false;
     }
 
-    public void defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b};}
-    public void hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b};}
+    public InputLabel defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b}; return this;}
+    public InputLabel hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b};  return this;}
 
-    public String text(String text) {
+    public InputLabel text(String text) {
         Text = text;
-        return text;
+        return this;
     }
 
     public boolean isPressed() {return Pressed;}
@@ -31,9 +31,8 @@ public class InputLabel implements UITool{
         Scanner sc = new Scanner(System.in);
         System.out.print("Text color is: "+ Arrays.toString(Color)+((Text.isEmpty()) ? "Enter text:" : Text));
         var nText = sc.nextLine();
-        if (!Objects.equals(nText, "")){
-            text(nText);draw();
-        }
-
+        if (nText.isEmpty())return;
+        text(nText);
+        draw();
     }
 }

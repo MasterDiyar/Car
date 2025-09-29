@@ -16,12 +16,12 @@ public class CheckMark implements UITool{
         Marked = false;
     }
 
-    public void defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b};}
-    public void hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b};}
+    public CheckMark defaultColor(int r, int g, int b) {DefColor = new int[]{r, g, b}; return this;}
+    public CheckMark hoverColor(int r, int g, int b) {HovColor = new int[]{r, g, b}; return this;}
 
-    public String text(String text) {
+    public CheckMark text(String text) {
         Text = text;
-        return text;
+        return this;
     }
     public boolean isPressed() {return isMarked();}
     public boolean isMarked() {return Marked;}
